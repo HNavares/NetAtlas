@@ -1,0 +1,88 @@
+Oui, et **Material Design colle très bien à ton projet** : tu vas avoir beaucoup de cartes, panneaux, menus, dialogues, états, tableaux et interactions.
+
+Comme tu es parti sur **PHP/Laravel**, je ferais plutôt une interface **inspirée de Material Design**, sans forcément introduire React.
+
+### Stack UI
+
+Je te conseillerais :
+
+- **Laravel + Blade**
+- **Materialize CSS** si tu veux quelque chose de simple et rapidement opérationnel
+- ou **Bootstrap 5 + Material Icons** si tu veux davantage de flexibilité
+- **Material Icons** pour les équipements et actions
+- **MapLibre** pour la carte
+- JavaScript pour les interactions
+
+Mais si tu veux une interface vraiment proche du **Material Design moderne**, je privilégierais **Material Web** ou une implémentation Material légère plutôt qu'un framework CSS vieillissant.
+
+### Je vois l'interface comme ça
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ ☰  NetAtlas                         🔔 3     👤 Admin           │
+├──────────────┬──────────────────────────────────────────────────┤
+│              │                                                  │
+│ 🏠 Dashboard │                                                  │
+│              │                                                  │
+│ 🌍 Datacenters│                  CARTE                          │
+│              │                                                  │
+│ 🖥 Devices   │           📍 Paris                              │
+│              │                                                  │
+│ ⚠ Incidents  │                              📍 Frankfurt        │
+│              │                                                  │
+│ 📊 Metrics   │                                                  │
+│              │                                                  │
+│ ⚙ Settings  │                                                  │
+│              │                                                  │
+└──────────────┴──────────────────────────────────────────────────┘
+```
+
+### Le détail que j'aime particulièrement pour ton projet
+
+Les **états Material** peuvent rendre la supervision immédiatement compréhensible.
+
+Par exemple :
+
+```
+┌─────────────────────────────────┐
+│ 🟢  DC Paris                    │
+│     42 équipements              │
+│     42 opérationnels            │
+└─────────────────────────────────┘
+
+┌─────────────────────────────────┐
+│ 🟠  DC Lyon                     │
+│     38 équipements              │
+│     36 opérationnels            │
+│     2 dégradés                  │
+└─────────────────────────────────┘
+
+┌─────────────────────────────────┐
+│ 🔴  DC Frankfurt                │
+│     51 équipements              │
+│     47 opérationnels            │
+│     4 hors service              │
+└─────────────────────────────────┘
+```
+
+Et lorsqu'un matériel tombe :
+
+```
+┌─────────────────────────────────────────┐
+│ 🔴  INCIDENT                            │
+├─────────────────────────────────────────┤
+│ Switch DC-PARIS-03                      │
+│                                         │
+│ Hors ligne depuis 2 min 14 s            │
+│                                         │
+│ Dernier signal : 16:42:31               │
+│                                         │
+│ [ Voir l'équipement ]   [ Acquitter ]   │
+└─────────────────────────────────────────┘
+```
+
+Je partirais également sur une **barre latérale Material**, une **top bar**, des **cards avec élévation légère**, des **chips pour les états**, des **dialogs** pour les actions et surtout une interface assez sobre : ton application va déjà être visuellement chargée avec la carte et les équipements.
+
+Et je garderais une règle importante : **pas besoin de faire une copie exacte de Grafana**. On peut reprendre les bons principes de Material pour créer une identité propre à ton projet, par exemple **NetAtlas**.
+
+Si tu veux, je peux te **faire une maquette interactive de la première page de NetAtlas** avec la carte, la sidebar Material, quelques datacenters et les indicateurs d'état, pour qu'on définisse précisément le look avant de commencer le PHP.
